@@ -46,3 +46,13 @@ model Memo {
   user      User     @relation(fields: [userId], references: [id])
   userId    Int      
 }
+
+model Category {
+  id        Int      @default(autoincrement()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String   
+  memos     Memo[]   
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      
+}
