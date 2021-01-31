@@ -6,6 +6,7 @@ export default async function createMemo({ data }: CreateMemoInput, ctx: Ctx) {
   ctx.session.authorize()
 
   const memo = await db.memo.create({ data })
+  console.log("bbbb")
 
   return memo
 }
